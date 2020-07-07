@@ -1,0 +1,166 @@
+body
+{
+  font-family: Arial;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/* HEADER ========================= */
+
+.header
+{
+  height: 50px;
+  max-width: inherit;
+  border-bottom: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 15px;
+}
+
+.header input
+{
+  height: 50%;
+  margin: auto;
+  width: 50%;
+  border-radius: 10px;
+}
+
+.logo,
+.avatar
+{
+  /* display: inline-block; */
+  height: 40px;
+  width: 40px;
+  margin: 0;
+
+
+}
+
+.logo img,
+.avatar img
+{
+  width: 100%;
+
+}
+
+.avatar
+{
+  display: inline-block;
+  border-radius: 23px;
+  border: 1px solid black;
+
+  overflow: hidden;
+  margin: 0 10px;
+}
+
+.header label
+{
+  display: flex;
+  align-items: center;
+}
+
+
+
+/* CONTENEDOR=============== */
+
+.contenedor
+{
+  display: grid;
+  /* grid-template-columns: 80px repeat(3, minmax(120px, 1fr)); */
+  grid-template-columns: 80px 1fr 1fr 1fr;
+
+  grid-template-rows: 40px minmax(120px, auto) 40px minmax(120px, auto) 40px minmax(120px, auto);
+  /* grid-auto-columns: 120px; */
+  grid-gap: 10px;
+}
+
+.left
+{
+  grid-row: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  background: #FD5F60;
+  align-items: center;
+  justify-content:flex-start;
+
+}
+
+.left figure
+{
+  height: 40px;
+  width: 40px;
+  /* margin: 30px 0 ; */
+}
+
+.left figure img
+{
+  width: 100%;
+}
+
+.left figure figcaption
+{
+  font-size: 0.8em;
+  text-align: center;
+}
+
+.left figure:last-of-type
+{
+  justify-content: flex-end;
+}
+
+
+.now,
+.critica,
+.show
+{
+  grid-column: 2 / span 3;
+}
+
+.cartel
+{
+  background-image: url('../images/ElSecreto.jpg');
+  background-size: contain;
+  object-fit: cover;
+  height: 120px;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.cartel div
+{
+  color: rgb(254, 254, 254);
+  background: rgba(254, 96, 97, 0.8);
+  font-size: 0.7em;
+
+  position: absolute;
+  bottom: 0px;
+  margin: 0;
+  padding: 0 5px;
+}
+
+.cartel div h3,
+.cartel div p
+{
+  margin: 0 0;
+}
+
+.cartel-1,
+.cartel-2,
+.cartel-3
+{
+  /* background: pink; */
+  grid-gap: 20px;
+  grid-column: 2 / span 3;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+@media screen and (max-width: 767px) {
+  .header label
+  {
+    display: none;
+  }
+}
